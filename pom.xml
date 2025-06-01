@@ -20,7 +20,7 @@
         <apache.commons.version>4.5.0</apache.commons.version>
         <awaitility.version>4.3.0</awaitility.version>
         <java.version>17</java.version>
-        <executionThreadCount>1</executionThreadCount>
+        <parallel.tests>4</parallel.tests>
         <tags></tags>
     </properties>
 
@@ -108,7 +108,7 @@
                 <version>${maven.failsafe.plugin.version}</version>
                 <configuration>
                     <parallel>methods</parallel>
-                    <threadCount>${executionThreadCount}</threadCount>
+                    <threadCount>${parallel.tests}</threadCount>
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <forkCount>2</forkCount>
                     <argLine>-Xmx3072m</argLine>
