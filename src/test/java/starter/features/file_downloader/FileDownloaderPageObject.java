@@ -1,24 +1,23 @@
-package starter.pages;
+package starter.features.file_downloader;
 
 import org.awaitility.Awaitility;
-import starter.common.AbstractPageObjects;
+import starter.common.pageobjects.AbstractPageObject;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
 
-public class DownloadPage extends AbstractPageObjects {
+public class FileDownloaderPageObject extends AbstractPageObject {
 
     private final String downloadLink = "//a[text()='random_data.txt']";
     private final String downloadUrl = "http://the-internet.herokuapp.com/download";
 
     public void launchUrl() {
         openUrl(downloadUrl);
-        waitForPageLoad(30);
     }
 
     public void clickOnDownload() {
-        findBy(downloadLink).waitUntilClickable().click();
+        clickOnWebElement(downloadLink);
     }
 
     public boolean isFileDownloaded(String fileName) {

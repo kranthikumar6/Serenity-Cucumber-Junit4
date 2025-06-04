@@ -1,13 +1,12 @@
-package starter.common;
+package starter.common.pageobjects;
 
 import net.serenitybdd.core.pages.PageObject;
-
 import java.time.Duration;
 
-public abstract class AbstractPageObjects extends PageObject {
+public abstract class AbstractPageObject extends PageObject {
 
     public void waitForPageLoad(int Seconds){
-        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Seconds));
     }
 
     public void clickOnWebElement(String locator){

@@ -1,8 +1,8 @@
-package starter.pages;
+package starter.features.swag_labs;
 
-import starter.common.AbstractPageObjects;
+import starter.common.pageobjects.AbstractPageObject;
 
-public class LoginPage extends AbstractPageObjects {
+public class SwagLabsPageObject extends AbstractPageObject {
 
     private final String swagLabs = "https://www.saucedemo.com/v1/";
     private final String userNameInput = "//input[@name='user-name']";
@@ -12,11 +12,6 @@ public class LoginPage extends AbstractPageObjects {
 
     public void launchUrl() {
         openUrl(swagLabs);
-        waitForPageLoad(30);
-    }
-
-    public String verifyPageTitle() {
-        return getTitle();
     }
 
     public void loginAsStandardUser() {
