@@ -17,7 +17,7 @@ public class FileDownloaderPageObject extends AbstractPageObject {
     }
 
     public void clickOnDownload() {
-        clickOnWebElement(downloadLink);
+        clickElement(downloadLink);
     }
 
     public boolean isFileDownloaded(String fileName) {

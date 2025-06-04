@@ -15,14 +15,14 @@ public class SwagLabsPageObject extends AbstractPageObject {
     }
 
     public void loginAsStandardUser() {
-        clickOnWebElement(userNameInput);
-        sendKeysOnWebElement(userNameInput, "standard_user");
-        clickOnWebElement(passwordInput);
-        sendKeysOnWebElement(passwordInput, "secret_sauce");
-        clickOnWebElement(loginButton);
+        clickElement(userNameInput);
+        enterText(userNameInput, "standard_user");
+        clickElement(passwordInput);
+        enterText(passwordInput, "secret_sauce");
+        clickElement(loginButton);
     }
 
     public String verifyProductsPageIsDisplayedAfterLogin() {
-        return getTextWebElement(productsHeader);
+        return retrieveText(productsHeader);
     }
 }
