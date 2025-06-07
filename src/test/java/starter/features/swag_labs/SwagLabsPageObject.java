@@ -23,6 +23,6 @@ public class SwagLabsPageObject extends AbstractPageObject {
     }
 
     public String verifyProductsPageIsDisplayedAfterLogin() {
-        return retrieveText(productsHeader);
+        return getElementText(productsHeader);
     }
 }
