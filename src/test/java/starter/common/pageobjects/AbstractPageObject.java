@@ -47,7 +47,7 @@ public abstract class AbstractPageObject extends PageObject {
         return findFirst(locator).isPresent();
     }
 
-    public void waitForElementVisible(String locator) {
+    public void waitForFirstElementVisible(String locator) {
         findFirst(locator).ifPresent(WebElementFacade::waitUntilVisible);
     }
 
@@ -57,16 +57,16 @@ public abstract class AbstractPageObject extends PageObject {
     }
 
     // Element Collection Methods
-    public int countElements(String locator) {
-        return findAll(locator).size();
+    public int countElements(String locators) {
+        return findAll(locators).size();
     }
 
-    public List<WebElementFacade> getAllElements(String locator) {
-        return findAll(locator);
+    public List<WebElementFacade> getAllElements(String locators) {
+        return findAll(locators);
     }
 
-    public Stream<WebElementFacade> streamElements(String locator) {
-        return findEach(locator);
+    public Stream<WebElementFacade> streamElements(String locators) {
+        return findEach(locators);
     }
 
     // DOM Navigation Methods
