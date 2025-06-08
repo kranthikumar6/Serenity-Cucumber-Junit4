@@ -15,10 +15,8 @@ public class SwagLabsPageObject extends AbstractPageObject {
     }
 
     public void loginAsStandardUser() {
-        clickElement(userNameInput);
-        enterText(userNameInput, "standard_user");
-        clickElement(passwordInput);
-        enterText(passwordInput, "secret_sauce");
+        clickAndEnterText(userNameInput, "standard_user");
+        clickAndEnterText(passwordInput, "secret_sauce");
         clickElement(loginButton);
     }
 

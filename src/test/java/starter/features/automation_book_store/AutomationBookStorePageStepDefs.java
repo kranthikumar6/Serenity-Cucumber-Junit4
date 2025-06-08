@@ -1,27 +1,30 @@
 package starter.features.automation_book_store;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
+import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class AutomationBookStorePageStepDefs {
 
     AutomationBookStorePageObject automationBookStorePageObject;
 
-    @Given("I open automation book store")
-    public void iOpenAutomationBookStore() {
+    @Given("I have opened the Automation Book Store")
+    public void iHaveOpenedTheAutomationBookStore() {
         automationBookStorePageObject.launchUrl();
     }
 
-    @Then("I see if single book is present")
-    public void iSeeIfSingleBookIsPresent() {
-        assertTrue(automationBookStorePageObject.checkIfBookIsPresent());
+    @When("I search for the book {string}")
+    public void iSearchForTheBook(String bookTitle) {
+        automationBookStorePageObject.filterBooks(bookTitle);
     }
 
-    @Then("I see the all the books page titles displayed")
-    public void iSeeTheAllTheBooksPageTitlesDisplayed(DataTable expectedBooksPageTitles) {
-        assertEquals(expectedBooksPageTitles.asList(), automationBookStorePageObject.getBookPageTitles());
+    @Then("the book {string} should be displayed")
+    public void theBookShouldBeDisplayed(String bookTitle) {
+        assertEquals(bookTitle, automationBookStorePageObject.getFilteredBookTitle());
+    }
+
+    @Then("the following book titles should be displayed")
+    public void theFollowingBookTitlesShouldBeDisplayed(DataTable expectedBooksTitles) {
+        assertEquals(expectedBooksTitles.asList(), automationBookStorePageObject.getBookTitles());
     }
 }

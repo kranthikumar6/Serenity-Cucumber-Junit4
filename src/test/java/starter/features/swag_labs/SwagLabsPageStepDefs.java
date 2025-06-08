@@ -1,7 +1,6 @@
 package starter.features.swag_labs;
 
 import io.cucumber.java.en.*;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SwagLabsPageStepDefs {

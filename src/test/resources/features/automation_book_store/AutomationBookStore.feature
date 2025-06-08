@@ -1,19 +1,21 @@
 @automationBookStore
-Feature: Automation Book Store
+Feature: Automation Book Store Navigation
 
   As a user
-  I want to open automation book store
-  So that I can see the book page titles
+  I want to access the Automation Book Store
+  So that I can view available book titles
+
+  Background:
+    Given I have opened the Automation Book Store
 
   @regression
-  Scenario: check if a book present
-    Given I open automation book store
-    Then I see if single book is present
+  Scenario: filter book displayed
+    When I search for the book "Test Automation in the Real World"
+    Then the book "Test Automation in the Real World" should be displayed
 
   @regression
-  Scenario: books page titles displayed
-    Given I open automation book store
-    Then I see the all the books page titles displayed
+  Scenario: all book titles displayed
+    Then the following book titles should be displayed
       | Test Automation in the Real World |
       | Experiences of Test Automation    |
       | Agile Testing                     |

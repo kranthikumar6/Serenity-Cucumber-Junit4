@@ -7,8 +7,8 @@ public class FileDownloaderPageStepDefs {
 
     FileDownloaderPageObject fileDownloaderPageObject;
 
-    @Given("I open file download url")
-    public void iOpenFileDownloadUrl() {
+    @Given("I have opened the file downloader URL")
+    public void iHaveOpenedTheFileDownloaderURL() {
         fileDownloaderPageObject.launchUrl();
     }
 
